@@ -10,5 +10,11 @@
     "note": "MIT OpenCourseWare brings deep insight into how data becomes intelligence. A classic foundational view from academia.",
     "youtube": "https://www.youtube.com/watch?v=8ONFjGv1XJc",
     "thumbnail": "https://img.youtube.com/vi/8ONFjGv1XJc/maxresdefault.jpg"
+  },
+  {
+    "title": "Mental Models for AI: Patterns, Not Magic",
+    "note": "A gentle 10-min intro to how AI builds on pattern recognition. You don't need to be technical to understand this mindset.",
+    "youtube": "https://www.youtube.com/watch?v=IebCWBzGOGE",
+    "thumbnail": "https://img.youtube.com/vi/IebCWBzGOGE/maxresdefault.jpg"
   }
 ]
