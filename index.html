@@ -90,7 +90,7 @@
       <div class="divider"></div>
 
       <div id="entry-section">
-        <p>Loading today’s entry...</p>
+        <p>Loading today’s entries...</p>
       </div>
 
       <div class="divider"></div>
@@ -106,19 +106,22 @@
     fetch('entries.json')
       .then(response => response.json())
       .then(data => {
-        const latest = data[0];
         const section = document.getElementById('entry-section');
-        section.innerHTML = `
-          <h3>${latest.title}</h3>
-          <p>${latest.note}</p>
-          <a href="${latest.youtube}" target="_blank">
-            <img class="video-thumbnail" src="${latest.thumbnail}" alt="Thumbnail for ${latest.title}" />
-          </a>
-        `;
+        section.innerHTML = data.map(entry => `
+          <div class="entry-block">
+            <h3>${entry.title}</h3>
+            <p>${entry.note}</p>
+            <a href="${entry.youtube}" target="_blank">
+              <img class="video-thumbnail" src="${entry.thumbnail}" alt="Thumbnail for ${entry.title}" />
+            </a>
+            <p><small>Can't see the video? <a href="${entry.youtube}" target="_blank">Click here to watch it on YouTube</a></small></p>
+            <div class="divider"></div>
+          </div>
+        `).join('');
       })
       .catch(error => {
         console.error('Could not load entries:', error);
-        document.getElementById('entry-section').innerHTML = '<p>Something went wrong loading today’s post.</p>';
+        document.getElementById('entry-section').innerHTML = '<p>Something went wrong loading today’s posts.</p>';
       });
   </script>
 </body>
