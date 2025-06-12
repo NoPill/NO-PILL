@@ -103,26 +103,35 @@
   </div>
 
   <script>
-    fetch('entries.json')
-      .then(response => response.json())
-      .then(data => {
-        const section = document.getElementById('entry-section');
-        section.innerHTML = data.map(entry => `
+  fetch('entries.json')
+    .then(response => response.json())
+    .then(data => {
+      const section = document.getElementById('entry-section');
+      section.innerHTML = data.map(entry => {
+        const videoId = new URL(entry.youtube).searchParams.get('v');
+        const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+        return `
           <div class="entry-block">
             <h3>${entry.title}</h3>
             <p>${entry.note}</p>
-            <a href="${entry.youtube}" target="_blank">
-              <img class="video-thumbnail" src="${entry.thumbnail}" alt="Thumbnail for ${entry.title}" />
-            </a>
-            <p><small>Can't see the video? <a href="${entry.youtube}" target="_blank">Click here to watch it on YouTube</a></small></p>
+            <iframe
+              width="100%" height="315"
+              src="${embedUrl}"
+              frameborder="0"
+              allowfullscreen
+              style="margin-top: 20px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.1);">
+            </iframe>
+            <p><small>Can’t see the video? <a href="${entry.youtube}" target="_blank">Watch on YouTube</a></small></p>
             <div class="divider"></div>
           </div>
-        `).join('');
-      })
-      .catch(error => {
-        console.error('Could not load entries:', error);
-        document.getElementById('entry-section').innerHTML = '<p>Something went wrong loading today’s posts.</p>';
-      });
+        `;
+      }).join('');
+    })
+    .catch(error => {
+      console.error('Could not load entries:', error);
+      document.getElementById('entry-section').innerHTML = '<p>Something went wrong loading today’s posts.</p>';
+    });
   </script>
+  
 </body>
 </html>
