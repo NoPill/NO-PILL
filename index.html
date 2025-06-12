@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="No Pills is a calm educational space blending mathematics, algorithms, and curiosity. No tricks, just patterns.">
+  <title>No Pills – Math is Already in You</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f7e9d7, #d6bfa7);
+      color: #2e2e2e;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+    .card {
+      background: #fff9f2;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #2f2f2f;
+      font-size: 2.6em;
+      background: #f1dac8;
+      padding: 12px 18px;
+      border-radius: 10px;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    a {
+      color: #1a5dab;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .divider {
+      border-top: 1px solid #d9c8b8;
+      margin: 35px 0;
+    }
+    footer {
+      font-size: 0.85em;
+      margin-top: 40px;
+      color: #888;
+    }
+    .video-thumbnail {
+      display: block;
+      max-width: 100%;
+      margin-top: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>🟦 No Pills – “Math is Already in You”</h1>
+
+      <p><strong>Theme:</strong> No Pills. No Tricks. Just Pattern.</p>
+
+      <h3>About this space:</h3>
+      <p>
+        No Pills is a social-educational corner that gathers everyday ideas,
+        especially around mathematics, algorithms, and the way our world is becoming more
+        computational — not just in labs and startups, but in the rhythms of life around us.
+      </p>
+
+      <p>
+        It’s not a place for formulas and pressure. It’s for clarity, not speed. Calm instead of hype.
+        We collect thoughts, links, visuals, and small truths that help people see:
+        this tech stuff isn’t magic — it’s old patterns in new clothes.
+      </p>
+
+      <p><em>This content is prepared by <strong>No Pills</strong> — a simple idea to bring clarity to the modern world of AI, algorithms, and computation.</em><br>
+      <em>What often feels scary or unreachable to many, can become familiar, gentle, and human once we see the patterns beneath it all.</em></p>
+
+      <div class="divider"></div>
+
+      <div id="entry-section">
+        <p>Loading today’s entry...</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <footer>
+        <p><em>This is one of many ongoing entries curated by No Pills — an open learning idea to humanize how we understand AI, computation, and the math that silently moves the world.</em></p>
+        <p><em>All rights to video content belong to their original creators. This page is purely educational and links to public sources.</em></p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    fetch('entries.json')
+      .then(response => response.json())
+      .then(data => {
+        const latest = data[0];
+        const section = document.getElementById('entry-section');
+        section.innerHTML = `
+          <h3>${latest.title}</h3>
+          <p><strong>Date:</strong> ${latest.date}</p>
+          <p>${latest.note}</p>
+          <a href="${latest.youtube}" target="_blank">
+            <img class="video-thumbnail" src="${latest.thumbnail}" alt="Thumbnail for ${latest.title}" />
+          </a>
+        `;
+      })
+      .catch(error => {
+        console.error('Could not load entries:', error);
+        document.getElementById('entry-section').innerHTML = '<p>Something went wrong loading today’s post.</p>';
+      });
+  </script>
+</body>
+</html>
