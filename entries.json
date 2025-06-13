@@ -35,4 +35,29 @@
     "youtube": "https://www.youtube.com/watch?v=R7aQwIN3w5M",
     "thumbnail": "https://img.youtube.com/vi/R7aQwIN3w5M/maxresdefault.jpg"
   }
+
+  {
+    "title": "Machine learning and AI is extremely easy if you learn the math",
+    "note": "Machine learning often comes down to simple equations. For example: y = mx + b — this line helps a machine guess values. The video shows how models use basic algebra to 'draw' predictions from data.",
+    "youtube": "https://www.youtube.com/watch?v=U6dmin6LzVw",
+    "thumbnail": "https://img.youtube.com/vi/U6dmin6LzVw/maxresdefault.jpg"
+  },
+  {
+    "title": "Here’s the Best Math Resources you need for AI and ML",
+    "note": "This is like a roadmap for learning AI math. It starts with numbers and shapes — vectors (like arrows in space), and matrices (grids of numbers). A matrix multiplies like: [[1,2],[3,4]] x [5,6] → patterns begin forming.",
+    "youtube": "https://www.youtube.com/watch?v=Lc7lO9HeeNQ",
+    "thumbnail": "https://img.youtube.com/vi/Lc7lO9HeeNQ/maxresdefault.jpg"
+  },
+  {
+    "title": "3Blue1Brown – The Math You Need For AI/ML",
+    "note": "Visual math that feels like art. It explains how machines 'see' using dots and directions. Example: A dot product measures alignment — if two arrows point the same way, the result is big. That’s how AI sees patterns.",
+    "youtube": "https://www.youtube.com/watch?v=m7tnHBJbyFY",
+    "thumbnail": "https://img.youtube.com/vi/m7tnHBJbyFY/maxresdefault.jpg"
+  },
+  {
+    "title": "AI Explained: It's maths, not magic",
+    "note": "AI is built on repetition and rules. A machine adjusts numbers over and over, like solving 2x + 3 = 7 again and again for millions of rows. This video shows how those rules let computers learn — one tiny step at a time.",
+    "youtube": "https://www.youtube.com/watch?v=5mHxO2JpCR0",
+    "thumbnail": "https://img.youtube.com/vi/5mHxO2JpCR0/maxresdefault.jpg"
+  }
 ]
